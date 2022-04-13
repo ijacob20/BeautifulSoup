@@ -11,7 +11,7 @@ def getJobList(role,location):
 #save data in JSON file
 def saveDataInJSON(jobDetails):
     #Complete the missing part of this function here
-    print("Saving data to JSON")
+    print("Saving the data to JSON") #My first change -Isaiah
 
 #main function
 def main():
