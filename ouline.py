@@ -1,7 +1,7 @@
 #import beautifulsoup and request here
-from bs4 import BeautifulSoup
 import requests
-#my first change - Jesse
+from bs4 import BeautifulSoup
+import json
 
 def displayJobDetails():
     print("Display job details")
@@ -14,14 +14,16 @@ def getJobList(role,location):
 #save data in JSON file
 def saveDataInJSON(jobDetails):
     #Complete the missing part of this function here
-    print("Saving the data to JSON") #My first change -Isaiah
+    print("Saving data to JSON")
 
 #main function
 def main():
     # Write a code here to get job location and role from user e.g. role = input()
-    print("Enter the role you want to search") # My first change -Kaitlin
+    print("Enter role you want to search")
     role = input()
     # Complete the missing part of this function here
+    print("Enter location you want to search")
+    location = input()
     
 if __name__ == '__main__':
     main()
