@@ -1,4 +1,7 @@
 #import beautifulsoup and request here
+from bs4 import BeautifulSoup
+import requests
+#my first change - Jesse
 
 def displayJobDetails():
     print("Display job details")
