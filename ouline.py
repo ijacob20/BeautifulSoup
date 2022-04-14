@@ -27,10 +27,12 @@ def getJobList(role,location):
     #print("job salary: ")
     #print(job.find('div', class_ = 'salary-snippet-container'))
 
-    jobTitle = job.find('h2', class_= 'jobTitle')
-    companyName = job.find('span', class_ = 'companyName')
-    jobDescription =  job.find('div', class_ = 'job-snippet')
-    jobSalary = job.find('div', class_ = 'salary-snippet-container')
+    
+
+    jobTitle = job.find('h2', class_= 'jobTitle').text
+    companyName = job.find('span', class_ = 'companyName').text
+    jobDescription =  job.find('div', class_ = 'job-snippet').text
+    jobSalary = job.find('div', class_ = 'salary-snippet-container').text
     
     allJobDetails = [jobTitle, companyName, jobDescription, jobSalary]
     print(allJobDetails)
