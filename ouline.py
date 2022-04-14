@@ -15,7 +15,7 @@ def getJobList(role,location):
     url = url.replace("{location}",location)
 
     # Complete the missing part of this function here 
-    page = requests.get(url)
+    page = requests.get(url) # from https://www.dataquest.io/blog/web-scraping-python-using-beautiful-soup/
     job = BeautifulSoup(page.content, 'html.parser')
 
     #print("job title: ")
@@ -34,8 +34,8 @@ def getJobList(role,location):
     jobDescription =  job.find('div', class_ = 'job-snippet').text
     jobSalary = job.find('div', class_ = 'salary-snippet-container').text
     
-    allJobDetails = [jobTitle, companyName, jobDescription, jobSalary]
-    print(allJobDetails)
+    allJobDetails = ["Title: " + jobTitle, "Company: " + companyName, "Description: " + jobDescription, "Salary: " + jobSalary]
+    return allJobDetails
 
 
 
@@ -43,6 +43,11 @@ def getJobList(role,location):
 def saveDataInJSON(jobDetails):
     #Complete the missing part of this function here
     print("Saving data to JSON")
+    out = open("jobDetails.json", "w")
+    json.dump(jobDetails, out)
+    print("Successfuly saved to specified file")
+
+
 
 #main function
 def main():
@@ -53,6 +58,8 @@ def main():
     location = input()
     print("Role: " + role + "\nLocation: " + location)
     # Complete the missing part of this function here
-    getJobList(role, location)
+    print(getJobList(role, location))
+    jobDetails = getJobList(role, location)
+    saveDataInJSON(jobDetails)
 if __name__ == '__main__':
     main()
